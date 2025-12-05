@@ -1,0 +1,311 @@
+2025-12-01 19:48:39,202 [INFO ]  Starting vertical comparison of the specified policies.
+2025-12-01 19:48:39,202 [INFO ]  Found 3 policies.
+2025-12-01 19:48:39,207 [INFO ]  Loading policy #1 (11T).
+2025-12-01 19:48:39,208 [WARNI]  Unhandled property at line 130.
+2025-12-01 19:48:39,208 [WARNI]  No simple incremental version: V816.0.17.0.UKWMIXM
+2025-12-01 19:48:39,209 [INFO ]  Android version v14.0 (2025-07-01).
+2025-12-01 19:56:58,744 [INFO ]  Reading file context 1940 / 1940.
+2025-12-01 19:57:00,582 [INFO ]  Read 1940 entries into 1135 file contexts.
+2025-12-01 19:57:01,926 [WARNI]  Missing 75 contexts in type transitions.
+2025-12-01 19:57:17,675 [INFO ]  Simplified graph to only object nodes. [N 1135] [E 807168]
+2025-12-01 19:57:17,676 [INFO ]  Loaded graph in 16.9756 [N 3822] [E 52122]     [N 1135] [E 807168]
+2025-12-01 19:57:17,683 [INFO ]  Loaded policy #1 in 518.4755747318268.
+2025-12-01 19:57:17,804 [INFO ]  Loading policy #2 (14T).
+2025-12-01 19:57:17,805 [WARNI]  No simple incremental version: OS2.0.206.0.VNEMIXM
+2025-12-01 19:57:17,805 [INFO ]  Android version v15.0 (2025-11-01).
+2025-12-01 20:16:33,487 [INFO ]  Reading file context 2264 / 2264.
+2025-12-01 20:16:36,147 [INFO ]  Read 2264 entries into 1297 file contexts.
+2025-12-01 20:16:38,708 [WARNI]  Missing 87 contexts in type transitions.
+2025-12-01 20:17:04,104 [INFO ]  Simplified graph to only object nodes. [N 1297] [E 1035606]
+2025-12-01 20:17:04,106 [INFO ]  Loaded graph in 27.7616 [N 4430] [E 63673]     [N 1297] [E 1035606]
+2025-12-01 20:17:04,116 [INFO ]  Loaded policy #2 in 1186.3125290870667.
+2025-12-01 20:17:04,278 [INFO ]  Loading policy #3 (15T).
+2025-12-01 20:17:04,283 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-01 20:17:04,283 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-01 20:35:30,199 [INFO ]  Reading file context 2271 / 2271.
+2025-12-01 20:35:33,355 [INFO ]  Read 2271 entries into 1321 file contexts.
+2025-12-01 20:35:34,983 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-01 20:35:59,285 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-01 20:35:59,287 [INFO ]  Loaded graph in 25.7104 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-01 20:35:59,296 [INFO ]  Loaded policy #3 in 1135.0179104804993.
+
+
+2025-12-01 20:35:59,478 [INFO ]  Loading policy #1 (11T).
+2025-12-01 20:35:59,483 [WARNI]  Unhandled property at line 130.
+2025-12-01 20:35:59,483 [WARNI]  No simple incremental version: V816.0.17.0.UKWMIXM
+2025-12-01 20:35:59,484 [INFO ]  Android version v14.0 (2025-07-01).
+2025-12-01 20:43:51,430 [INFO ]  Reading file context 1940 / 1940.
+2025-12-01 20:43:53,380 [INFO ]  Read 1940 entries into 1135 file contexts.
+2025-12-01 20:43:55,823 [WARNI]  Missing 75 contexts in type transitions.
+2025-12-01 20:44:12,269 [INFO ]  Simplified graph to only object nodes. [N 1135] [E 807168]
+2025-12-01 20:44:12,272 [INFO ]  Loaded graph in 18.7668 [N 3822] [E 52122]     [N 1135] [E 807168]
+2025-12-01 20:44:12,279 [INFO ]  Loaded policy #1 in 492.8010160923004.
+2025-12-01 20:44:12,400 [INFO ]  Loading policy #2 (14T).
+2025-12-01 20:44:12,405 [WARNI]  No simple incremental version: OS2.0.206.0.VNEMIXM
+2025-12-01 20:44:12,405 [INFO ]  Android version v15.0 (2025-11-01).
+2025-12-01 21:03:21,176 [INFO ]  Reading file context 2264 / 2264.
+2025-12-01 21:03:23,912 [INFO ]  Read 2264 entries into 1297 file contexts.
+2025-12-01 21:03:25,610 [WARNI]  Missing 87 contexts in type transitions.
+2025-12-01 21:03:51,184 [INFO ]  Simplified graph to only object nodes. [N 1297] [E 1035606]
+2025-12-01 21:03:51,187 [INFO ]  Loaded graph in 27.0463 [N 4430] [E 63673]     [N 1297] [E 1035606]
+2025-12-01 21:03:51,196 [INFO ]  Loaded policy #2 in 1178.7958633899689.
+2025-12-01 21:03:51,373 [INFO ]  Loading policy #3 (15T).
+2025-12-01 21:03:51,377 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-01 21:03:51,377 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-01 21:22:02,938 [INFO ]  Reading file context 2271 / 2271.
+2025-12-01 21:22:05,829 [INFO ]  Read 2271 entries into 1321 file contexts.
+2025-12-01 21:22:08,516 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-01 21:22:31,318 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-01 21:22:31,320 [INFO ]  Loaded graph in 25.3250 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-01 21:22:31,329 [INFO ]  Loaded policy #3 in 1119.955985546112.
+
+
+2025-12-01 21:22:31,493 [INFO ]  Loading policy #1 (11T).
+2025-12-01 21:22:31,498 [WARNI]  Unhandled property at line 130.
+2025-12-01 21:22:31,498 [WARNI]  No simple incremental version: V816.0.17.0.UKWMIXM
+2025-12-01 21:22:31,498 [INFO ]  Android version v14.0 (2025-07-01).
+2025-12-01 21:30:20,247 [INFO ]  Reading file context 1940 / 1940.
+2025-12-01 21:30:21,923 [INFO ]  Read 1940 entries into 1135 file contexts.
+2025-12-01 21:30:23,131 [WARNI]  Missing 75 contexts in type transitions.
+2025-12-01 21:30:40,763 [INFO ]  Simplified graph to only object nodes. [N 1135] [E 807168]
+2025-12-01 21:30:40,765 [INFO ]  Loaded graph in 18.7307 [N 3822] [E 52122]     [N 1135] [E 807168]
+2025-12-01 21:30:40,773 [INFO ]  Loaded policy #1 in 489.2803430557251.
+2025-12-01 21:30:40,906 [INFO ]  Loading policy #2 (14T).
+2025-12-01 21:30:40,912 [WARNI]  No simple incremental version: OS2.0.206.0.VNEMIXM
+2025-12-01 21:30:40,912 [INFO ]  Android version v15.0 (2025-11-01).
+2025-12-01 21:49:52,628 [INFO ]  Reading file context 2264 / 2264.
+2025-12-01 21:49:55,608 [INFO ]  Read 2264 entries into 1297 file contexts.
+2025-12-01 21:49:58,533 [WARNI]  Missing 87 contexts in type transitions.
+2025-12-01 21:50:24,609 [INFO ]  Simplified graph to only object nodes. [N 1297] [E 1035606]
+2025-12-01 21:50:24,611 [INFO ]  Loaded graph in 28.7747 [N 4430] [E 63673]     [N 1297] [E 1035606]
+2025-12-01 21:50:24,621 [INFO ]  Loaded policy #2 in 1183.7145700454712.
+2025-12-01 21:50:24,822 [INFO ]  Loading policy #3 (15T).
+2025-12-01 21:50:24,828 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-01 21:50:24,828 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-01 22:08:46,953 [INFO ]  Reading file context 2271 / 2271.
+2025-12-01 22:08:50,055 [INFO ]  Read 2271 entries into 1321 file contexts.
+2025-12-01 22:08:53,217 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-01 22:09:16,811 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-01 22:09:16,812 [INFO ]  Loaded graph in 26.5468 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-01 22:09:16,822 [INFO ]  Loaded policy #3 in 1131.9998910427094.
+
+
+2025-12-01 22:09:16,980 [INFO ]  Loading policy #1 (11T).
+2025-12-01 22:09:16,985 [WARNI]  Unhandled property at line 130.
+2025-12-01 22:09:16,985 [WARNI]  No simple incremental version: V816.0.17.0.UKWMIXM
+2025-12-01 22:09:16,985 [INFO ]  Android version v14.0 (2025-07-01).
+2025-12-01 22:17:24,801 [INFO ]  Reading file context 1940 / 1940.
+2025-12-01 22:17:26,729 [INFO ]  Read 1940 entries into 1135 file contexts.
+2025-12-01 22:17:28,197 [WARNI]  Missing 75 contexts in type transitions.
+2025-12-01 22:17:46,685 [INFO ]  Simplified graph to only object nodes. [N 1135] [E 807168]
+2025-12-01 22:17:46,686 [INFO ]  Loaded graph in 19.8221 [N 3822] [E 52122]     [N 1135] [E 807168]
+2025-12-01 22:17:46,694 [INFO ]  Loaded policy #1 in 509.7140939235687.
+2025-12-01 22:17:46,859 [INFO ]  Loading policy #2 (14T).
+2025-12-01 22:17:46,865 [WARNI]  No simple incremental version: OS2.0.206.0.VNEMIXM
+2025-12-01 22:17:46,865 [INFO ]  Android version v15.0 (2025-11-01).
+2025-12-01 22:37:05,322 [INFO ]  Reading file context 2264 / 2264.
+2025-12-01 22:37:08,373 [INFO ]  Read 2264 entries into 1297 file contexts.
+2025-12-01 22:37:11,528 [WARNI]  Missing 87 contexts in type transitions.
+2025-12-01 22:37:39,081 [INFO ]  Simplified graph to only object nodes. [N 1297] [E 1035606]
+2025-12-01 22:37:39,083 [INFO ]  Loaded graph in 30.4546 [N 4430] [E 63673]     [N 1297] [E 1035606]
+2025-12-01 22:37:39,095 [INFO ]  Loaded policy #2 in 1192.235933303833.
+2025-12-01 22:37:39,457 [INFO ]  Loading policy #3 (15T).
+2025-12-01 22:37:39,470 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-01 22:37:39,470 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-01 22:56:22,917 [INFO ]  Reading file context 2271 / 2271.
+2025-12-01 22:56:26,097 [INFO ]  Read 2271 entries into 1321 file contexts.
+2025-12-01 22:56:29,298 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-01 22:56:53,054 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-01 22:56:53,055 [INFO ]  Loaded graph in 26.7358 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-01 22:56:53,064 [INFO ]  Loaded policy #3 in 1153.606296300888.
+
+
+2025-12-01 22:56:53,237 [INFO ]  Loading policy #1 (11T).
+2025-12-01 22:56:53,244 [WARNI]  Unhandled property at line 130.
+2025-12-01 22:56:53,244 [WARNI]  No simple incremental version: V816.0.17.0.UKWMIXM
+2025-12-01 22:56:53,244 [INFO ]  Android version v14.0 (2025-07-01).
+2025-12-01 23:04:51,231 [INFO ]  Reading file context 1940 / 1940.
+2025-12-01 23:04:53,301 [INFO ]  Read 1940 entries into 1135 file contexts.
+2025-12-01 23:04:56,219 [WARNI]  Missing 75 contexts in type transitions.
+2025-12-01 23:05:13,362 [INFO ]  Simplified graph to only object nodes. [N 1135] [E 807168]
+2025-12-01 23:05:13,363 [INFO ]  Loaded graph in 19.9224 [N 3822] [E 52122]     [N 1135] [E 807168]
+2025-12-01 23:05:13,372 [INFO ]  Loaded policy #1 in 500.1345772743225.
+2025-12-01 23:05:13,534 [INFO ]  Loading policy #2 (14T).
+2025-12-01 23:05:13,540 [WARNI]  No simple incremental version: OS2.0.206.0.VNEMIXM
+2025-12-01 23:05:13,540 [INFO ]  Android version v15.0 (2025-11-01).
+2025-12-01 23:24:20,776 [INFO ]  Reading file context 2264 / 2264.
+2025-12-01 23:24:23,740 [INFO ]  Read 2264 entries into 1297 file contexts.
+2025-12-01 23:24:26,858 [WARNI]  Missing 87 contexts in type transitions.
+2025-12-01 23:24:52,733 [INFO ]  Simplified graph to only object nodes. [N 1297] [E 1035606]
+2025-12-01 23:24:52,734 [INFO ]  Loaded graph in 28.7868 [N 4430] [E 63673]     [N 1297] [E 1035606]
+2025-12-01 23:24:52,747 [INFO ]  Loaded policy #2 in 1179.2133841514587.
+2025-12-01 23:24:52,945 [INFO ]  Loading policy #3 (15T).
+2025-12-01 23:24:52,952 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-01 23:24:52,952 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-01 23:43:16,552 [INFO ]  Reading file context 2271 / 2271.
+2025-12-01 23:43:19,771 [INFO ]  Read 2271 entries into 1321 file contexts.
+2025-12-01 23:43:23,221 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-01 23:43:47,661 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-01 23:43:47,663 [INFO ]  Loaded graph in 27.6574 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-01 23:43:47,671 [INFO ]  Loaded policy #3 in 1134.7255556583405.
+
+
+2025-12-01 23:43:47,868 [INFO ]  Loading policy #1 (11T).
+2025-12-01 23:43:47,873 [WARNI]  Unhandled property at line 130.
+2025-12-01 23:43:47,873 [WARNI]  No simple incremental version: V816.0.17.0.UKWMIXM
+2025-12-01 23:43:47,873 [INFO ]  Android version v14.0 (2025-07-01).
+2025-12-01 23:51:40,417 [INFO ]  Reading file context 1940 / 1940.
+2025-12-01 23:51:42,447 [INFO ]  Read 1940 entries into 1135 file contexts.
+2025-12-01 23:51:43,939 [WARNI]  Missing 75 contexts in type transitions.
+2025-12-01 23:52:02,411 [INFO ]  Simplified graph to only object nodes. [N 1135] [E 807168]
+2025-12-01 23:52:02,412 [INFO ]  Loaded graph in 19.8229 [N 3822] [E 52122]     [N 1135] [E 807168]
+2025-12-01 23:52:02,423 [INFO ]  Loaded policy #1 in 494.555303812027.
+2025-12-01 23:52:02,577 [INFO ]  Loading policy #2 (14T).
+2025-12-01 23:52:02,583 [WARNI]  No simple incremental version: OS2.0.206.0.VNEMIXM
+2025-12-01 23:52:02,583 [INFO ]  Android version v15.0 (2025-11-01).
+2025-12-02 00:11:16,189 [INFO ]  Reading file context 2264 / 2264.
+2025-12-02 00:11:19,200 [INFO ]  Read 2264 entries into 1297 file contexts.
+2025-12-02 00:11:22,579 [WARNI]  Missing 87 contexts in type transitions.
+2025-12-02 00:11:49,012 [INFO ]  Simplified graph to only object nodes. [N 1297] [E 1035606]
+2025-12-02 00:11:49,014 [INFO ]  Loaded graph in 29.5682 [N 4430] [E 63673]     [N 1297] [E 1035606]
+2025-12-02 00:11:49,025 [INFO ]  Loaded policy #2 in 1186.4476795196533.
+2025-12-02 00:11:49,237 [INFO ]  Loading policy #3 (15T).
+2025-12-02 00:11:49,243 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-02 00:11:49,243 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-02 00:30:14,067 [INFO ]  Reading file context 2271 / 2271.
+2025-12-02 00:30:17,350 [INFO ]  Read 2271 entries into 1321 file contexts.
+2025-12-02 00:30:19,004 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-02 00:30:44,872 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-02 00:30:44,874 [INFO ]  Loaded graph in 27.2999 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-02 00:30:44,883 [INFO ]  Loaded policy #3 in 1135.6462547779083.
+
+
+2025-12-02 00:30:45,060 [INFO ]  Loading policy #1 (11T).
+2025-12-02 00:30:45,066 [WARNI]  Unhandled property at line 130.
+2025-12-02 00:30:45,067 [WARNI]  No simple incremental version: V816.0.17.0.UKWMIXM
+2025-12-02 00:30:45,067 [INFO ]  Android version v14.0 (2025-07-01).
+2025-12-02 00:38:39,372 [INFO ]  Reading file context 1940 / 1940.
+2025-12-02 00:38:41,601 [INFO ]  Read 1940 entries into 1135 file contexts.
+2025-12-02 00:38:42,856 [WARNI]  Missing 75 contexts in type transitions.
+2025-12-02 00:39:01,927 [INFO ]  Simplified graph to only object nodes. [N 1135] [E 807168]
+2025-12-02 00:39:01,929 [INFO ]  Loaded graph in 20.1919 [N 3822] [E 52122]     [N 1135] [E 807168]
+2025-12-02 00:39:01,936 [INFO ]  Loaded policy #1 in 496.87649416923523.
+2025-12-02 00:39:02,081 [INFO ]  Loading policy #2 (14T).
+2025-12-02 00:39:02,086 [WARNI]  No simple incremental version: OS2.0.206.0.VNEMIXM
+2025-12-02 00:39:02,086 [INFO ]  Android version v15.0 (2025-11-01).
+2025-12-02 00:58:21,162 [INFO ]  Reading file context 2264 / 2264.
+2025-12-02 00:58:24,009 [INFO ]  Read 2264 entries into 1297 file contexts.
+2025-12-02 00:58:27,388 [WARNI]  Missing 87 contexts in type transitions.
+2025-12-02 00:58:54,394 [INFO ]  Simplified graph to only object nodes. [N 1297] [E 1035606]
+2025-12-02 00:58:54,396 [INFO ]  Loaded graph in 30.1605 [N 4430] [E 63673]     [N 1297] [E 1035606]
+2025-12-02 00:58:54,406 [INFO ]  Loaded policy #2 in 1192.3251802921295.
+2025-12-02 00:58:54,607 [INFO ]  Loading policy #3 (15T).
+2025-12-02 00:58:54,613 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-02 00:58:54,614 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-02 01:17:20,838 [INFO ]  Reading file context 2271 / 2271.
+2025-12-02 01:17:23,962 [INFO ]  Read 2271 entries into 1321 file contexts.
+2025-12-02 01:17:25,509 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-02 01:17:51,110 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-02 01:17:51,111 [INFO ]  Loaded graph in 26.9238 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-02 01:17:51,122 [INFO ]  Loaded policy #3 in 1136.5149402618408.
+
+
+2025-12-02 01:17:51,333 [INFO ]  Loading policy #1 (11T).
+2025-12-02 01:17:51,340 [WARNI]  Unhandled property at line 130.
+2025-12-02 01:17:51,340 [WARNI]  No simple incremental version: V816.0.17.0.UKWMIXM
+2025-12-02 01:17:51,340 [INFO ]  Android version v14.0 (2025-07-01).
+2025-12-02 01:25:47,985 [INFO ]  Reading file context 1940 / 1940.
+2025-12-02 01:25:50,019 [INFO ]  Read 1940 entries into 1135 file contexts.
+2025-12-02 01:25:51,410 [WARNI]  Missing 75 contexts in type transitions.
+2025-12-02 01:26:10,388 [INFO ]  Simplified graph to only object nodes. [N 1135] [E 807168]
+2025-12-02 01:26:10,390 [INFO ]  Loaded graph in 20.2318 [N 3822] [E 52122]     [N 1135] [E 807168]
+2025-12-02 01:26:10,397 [INFO ]  Loaded policy #1 in 499.06420969963074.
+2025-12-02 01:26:10,540 [INFO ]  Loading policy #2 (14T).
+2025-12-02 01:26:10,546 [WARNI]  No simple incremental version: OS2.0.206.0.VNEMIXM
+2025-12-02 01:26:10,546 [INFO ]  Android version v15.0 (2025-11-01).
+2025-12-02 01:45:21,352 [INFO ]  Reading file context 2264 / 2264.
+2025-12-02 01:45:24,226 [INFO ]  Read 2264 entries into 1297 file contexts.
+2025-12-02 01:45:25,977 [WARNI]  Missing 87 contexts in type transitions.
+2025-12-02 01:45:53,850 [INFO ]  Simplified graph to only object nodes. [N 1297] [E 1035606]
+2025-12-02 01:45:53,852 [INFO ]  Loaded graph in 29.3929 [N 4430] [E 63673]     [N 1297] [E 1035606]
+2025-12-02 01:45:53,863 [INFO ]  Loaded policy #2 in 1183.322895526886.
+2025-12-02 01:45:54,067 [INFO ]  Loading policy #3 (15T).
+2025-12-02 01:45:54,074 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-02 01:45:54,074 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-02 02:04:15,476 [INFO ]  Reading file context 2271 / 2271.
+2025-12-02 02:04:18,720 [INFO ]  Read 2271 entries into 1321 file contexts.
+2025-12-02 02:04:20,393 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-02 02:04:46,679 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-02 02:04:46,681 [INFO ]  Loaded graph in 27.7405 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-02 02:04:46,690 [INFO ]  Loaded policy #3 in 1132.6232171058655.
+
+
+2025-12-02 02:04:46,863 [INFO ]  Loading policy #1 (11T).
+2025-12-02 02:04:46,869 [WARNI]  Unhandled property at line 130.
+2025-12-02 02:04:46,870 [WARNI]  No simple incremental version: V816.0.17.0.UKWMIXM
+2025-12-02 02:04:46,870 [INFO ]  Android version v14.0 (2025-07-01).
+2025-12-02 02:12:44,235 [INFO ]  Reading file context 1940 / 1940.
+2025-12-02 02:12:46,283 [INFO ]  Read 1940 entries into 1135 file contexts.
+2025-12-02 02:12:47,678 [WARNI]  Missing 75 contexts in type transitions.
+2025-12-02 02:13:06,273 [INFO ]  Simplified graph to only object nodes. [N 1135] [E 807168]
+2025-12-02 02:13:06,274 [INFO ]  Loaded graph in 19.8475 [N 3822] [E 52122]     [N 1135] [E 807168]
+2025-12-02 02:13:06,282 [INFO ]  Loaded policy #1 in 499.41924118995667.
+2025-12-02 02:13:06,408 [INFO ]  Loading policy #2 (14T).
+2025-12-02 02:13:06,414 [WARNI]  No simple incremental version: OS2.0.206.0.VNEMIXM
+2025-12-02 02:13:06,414 [INFO ]  Android version v15.0 (2025-11-01).
+2025-12-02 02:32:25,114 [INFO ]  Reading file context 2264 / 2264.
+2025-12-02 02:32:28,675 [INFO ]  Read 2264 entries into 1297 file contexts.
+2025-12-02 02:32:31,756 [WARNI]  Missing 87 contexts in type transitions.
+2025-12-02 02:33:01,160 [INFO ]  Simplified graph to only object nodes. [N 1297] [E 1035606]
+2025-12-02 02:33:01,162 [INFO ]  Loaded graph in 32.2777 [N 4430] [E 63673]     [N 1297] [E 1035606]
+2025-12-02 02:33:01,173 [INFO ]  Loaded policy #2 in 1194.7656075954437.
+2025-12-02 09:48:26,791 [INFO ]  Loading policy #3 (15T).
+2025-12-02 09:48:26,792 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-02 09:48:26,793 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-02 10:07:58,308 [INFO ]  Reading file context 2271 / 2271.
+2025-12-02 10:08:01,184 [INFO ]  Read 2271 entries into 1321 file contexts.
+2025-12-02 10:08:02,601 [INFO ]  Saved 1321 file contexts to db (src/selinuxtool/android-extract/policies/xiaomi/T/15T/db).
+2025-12-02 10:08:04,297 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-02 10:08:27,300 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-02 10:08:27,301 [INFO ]  Loaded graph in 24.6960 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-02 10:08:27,309 [INFO ]  Loaded policy #3 in 1200.5179724693298.
+
+
+2025-12-02 08:58:56,881 [INFO ]  Starting vertical comparison of the specified policies.
+2025-12-02 08:58:56,882 [INFO ]  Found 3 policies.
+2025-12-02 08:58:56,904 [INFO ]  Loading policy #1 (11T).
+2025-12-02 08:58:56,905 [WARNI]  Unhandled property at line 130.
+2025-12-02 08:58:56,906 [WARNI]  No simple incremental version: V816.0.17.0.UKWMIXM
+2025-12-02 08:58:56,906 [INFO ]  Android version v14.0 (2025-07-01).
+2025-12-02 09:07:38,328 [INFO ]  Reading file context 1940 / 1940.
+2025-12-02 09:07:40,351 [INFO ]  Read 1940 entries into 1135 file contexts.
+2025-12-02 09:07:41,331 [INFO ]  Saved 1135 file contexts to db (src/selinuxtool/android-extract/policies/xiaomi/11T/db).
+2025-12-02 09:07:42,813 [WARNI]  Missing 75 contexts in type transitions.
+2025-12-02 09:08:00,244 [INFO ]  Simplified graph to only object nodes. [N 1135] [E 807168]
+2025-12-02 09:08:00,245 [INFO ]  Loaded graph in 18.9135 [N 3822] [E 52122]     [N 1135] [E 807168]
+2025-12-02 09:08:00,260 [INFO ]  Loaded policy #1 in 543.3563153743744.
+2025-12-02 09:08:00,557 [INFO ]  Loading policy #2 (14T).
+2025-12-02 09:08:00,561 [WARNI]  No simple incremental version: OS2.0.206.0.VNEMIXM
+2025-12-02 09:08:00,561 [INFO ]  Android version v15.0 (2025-11-01).
+2025-12-02 09:27:39,247 [INFO ]  Reading file context 2264 / 2264.
+2025-12-02 09:27:42,141 [INFO ]  Read 2264 entries into 1297 file contexts.
+2025-12-02 09:27:43,233 [INFO ]  Saved 1297 file contexts to db (src/selinuxtool/android-extract/policies/xiaomi/14T/db).
+2025-12-02 09:27:44,917 [WARNI]  Missing 87 contexts in type transitions.
+2025-12-02 09:28:11,883 [INFO ]  Simplified graph to only object nodes. [N 1297] [E 1035606]
+2025-12-02 09:28:11,885 [INFO ]  Loaded graph in 28.6507 [N 4430] [E 63673]     [N 1297] [E 1035606]
+2025-12-02 09:28:11,898 [INFO ]  Loaded policy #2 in 1211.3408348560333.
+2025-12-02 09:28:12,089 [INFO ]  Loading policy #3 (15T).
+2025-12-02 09:28:12,119 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-02 09:28:12,119 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-02 09:46:40,795 [INFO ]  Reading file context 2271 / 2271.
+2025-12-02 09:46:44,001 [INFO ]  Read 2271 entries into 1321 file contexts.
+2025-12-02 09:46:45,256 [INFO ]  Saved 1321 file contexts to db (src/selinuxtool/android-extract/policies/xiaomi/15T/db).
+2025-12-02 09:46:47,088 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-02 09:47:10,534 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-02 09:47:10,536 [INFO ]  Loaded graph in 25.2781 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-02 09:47:10,544 [INFO ]  Loaded policy #3 in 1138.4547090530396.
+
+
+Average #1:     504.37
+Average #2:     1188.80
+Average #3:     1141.90

@@ -1,0 +1,10 @@
+bigmac
+lib
+__pycache__
+.temp
+*.egg-info
+out
+log
+
+# Policies dbs
+policies/**/db/*

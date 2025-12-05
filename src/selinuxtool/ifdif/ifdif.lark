@@ -1,0 +1,20 @@
+?start: policy
+
+?policy: policy "and" policy_and_free          -> and 
+        | policy_and_free
+
+?policy_and_free: "true"                          -> true
+                | "label_" index "(" label ")"    -> up_arrow
+                | "not" policy_and_free           -> not
+                | "ito_" index policy_and_free    -> diamond
+                | "ifrom_" index policy_and_free  -> b_diamond
+                | "(" policy ")"
+
+index: INT
+label: WORD
+
+%import common.INT
+%import common.WORD
+%import common.WS
+
+%ignore WS

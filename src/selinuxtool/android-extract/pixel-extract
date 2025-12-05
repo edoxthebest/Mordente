@@ -1,0 +1,31 @@
+#!/bin/bash -x
+
+# redfin -- Pixel 5 (vv. 11 - 12 - 13 - 14)
+# ./extract --vendor pixel --device redfin --url https://dl.google.com/dl/android/aosp/redfin-ota-rd1a.200810.022.a4-0fe705b2.zip  --checksum 0fe705b2c4c96bb30c80ccb8e11716eb9d12c737b5844e0d966768f814e9e511
+# ./extract --vendor pixel --device redfin --url https://dl.google.com/dl/android/aosp/redfin-ota-sp1a.210812.015-2596fc07.zip     --checksum 2596fc07e45e7805f3d92b860de73ed83d0cd819e9965975e72fb576ecf5d6ad
+# ./extract --vendor pixel --device redfin --url https://dl.google.com/dl/android/aosp/redfin-ota-tp1a.220624.014-3301931b.zip     --checksum 3301931bd6d287899aa08eeb50a869d30f2b767de7505bb802d08f4476af1e0c
+# ./extract --vendor pixel --device redfin --url https://dl.google.com/dl/android/aosp/redfin-ota-up1a.231005.007-4593d7c6.zip     --checksum 4593d7c611b0712b0b508f41363bcc44d0247ce7396d79afc9fb395185e6a960
+
+# # panther -- Pixel 7 (vv. 13 - 14 - 15)
+# ./extract --vendor pixel --device panther --url https://dl.google.com/dl/android/aosp/panther-ota-td1a.220804.009.a2-1ba82532.zip  --checksum 1ba82532cf20c7f71dc6f3ea3a89b3ebe13fb82b46944e6a9f2c936aed41f63c
+# ./extract --vendor pixel --device panther --url https://dl.google.com/dl/android/aosp/panther-ota-up1a.231005.007-16d1f4a7.zip     --checksum 16d1f4a73bae65cd4e95b41c81ccf0e576c8d87f9c7787c0aaf10c6fff43797c
+# ./extract --vendor pixel --device panther --url https://dl.google.com/dl/android/aosp/panther-ota-ap3a.241005.015-59cef26e.zip     --checksum 59cef26e514fc0c2704c5960ac1329d4c84067ae3d0271d5c0ad2c420594d7bd
+
+# # tokai -- Pixel 9 (vv. 14 - 15)
+# ./extract --vendor pixel --device tokai --url https://dl.google.com/dl/android/aosp/tokay-ota-ad1a.240530.030-5077f537.zip --checksum 5077f537a0fa4fb4af65a575f2541683e98a3be1c92c063555b32f8a5ec143de
+# ./extract --vendor pixel --device tokai --url https://dl.google.com/dl/android/aosp/tokay-ota-ap3a.241005.015-8894bda5.zip --checksum 8894bda50281db30834bff55813ff53bcc823b39f310ebafcdaaa423e5acb01a
+
+# comet -- Pixel 9 Pro Fold (v. 15: Oct / Nov / Dec / Jan / Feb / Mar / Apr / May)
+# ./extract --full --vendor pixel --device comet --url https://dl.google.com/dl/android/aosp/comet-ota-ap3a.241005.015-5350adac.zip --checksum 5350adacb10bd370b67f7120cff96975c18a14889b97a855cdd89cb53bff00bc
+# ./extract --full --vendor pixel --device comet --url https://dl.google.com/dl/android/aosp/comet-ota-ap3a.241105.008-ebe2f388.zip --checksum ebe2f38837b4f8a32dc04f5d3ac53bc9b1ff722fa7cb000237204deadd70179a
+# ./extract --full --vendor pixel --device comet --url https://dl.google.com/dl/android/aosp/comet-ota-ap4a.241205.013-616bfa66.zip --checksum 616bfa66d15b5dfd5c76e00d2a8c78a09ffef320eff56d31bcca51d4e8a003b0
+# ./extract --full --vendor pixel --device comet --url https://dl.google.com/dl/android/aosp/comet-ota-ap4a.250105.002-9273a642.zip --checksum 9273a6429bcee2d0d94fb5bb30bdde30767baa1388e69a2ffda94833339b2264
+# ./extract --full --vendor pixel --device comet --url https://dl.google.com/dl/android/aosp/comet-ota-ap4a.250205.002-5b998617.zip --checksum 5b998617ac3dc94ed3951b4ff8bb0cbf5e12e9381e559abc2f185d1588db499d
+# ./extract --full --vendor pixel --device comet --url https://dl.google.com/dl/android/aosp/comet-ota-bp1a.250305.020-04e1162a.zip --checksum 04e1162afd6c7ae41b5e09bb0697b78bf28858766f6d19ad17cfc9ffab9dafaa
+# ./extract --full --vendor pixel --device comet --url https://dl.google.com/dl/android/aosp/comet-ota-bp1a.250405.007-3b5a62aa.zip --checksum 3b5a62aab3c6d61f455025b40f166e8146339061b54bacc51cdc277a923cfc0a
+# ./extract --full --vendor pixel --device comet --url https://dl.google.com/dl/android/aosp/comet-ota-bp1a.250505.005-d344e885.zip --checksum d344e8857143f34c9d16429f9de945a3db91ce01b2534654ad4c220fe4ed2630
+
+# comet -- Pixel 9 Pro Fold (vv. 14 - 15 - 16)
+./extract --vendor pixel --device comet --url https://dl.google.com/dl/android/aosp/comet-ota-ad1a.240530.030-98066022.zip --checksum 98066022ebf9482a956b7135f831b7bf1c66f43667193fcb1ddd2adf681f1383
+./extract --vendor pixel --device comet --url https://dl.google.com/dl/android/aosp/comet-ota-ap3a.241005.015-5350adac.zip --checksum 5350adacb10bd370b67f7120cff96975c18a14889b97a855cdd89cb53bff00bc
+./extract --vendor pixel --device comet --url https://dl.google.com/dl/android/aosp/comet-ota-bp2a.250605.031.a3-b6c67e0a.zip --checksum b6c67e0a96df3ef2bf75ac8eba49cc50c5aae500f84583221881a665b429a0ec

@@ -1,0 +1,55 @@
+2025-11-30 22:57:18,949 [INFO ]  Starting comparison of the specified policies.
+2025-11-30 22:57:18,989 [INFO ]  Loading policy #1 (comet-ota-bp1a.250405.007-3b5a62aa).
+2025-11-30 22:57:18,991 [INFO ]  Android version v15.13240079 (2025-04-05).
+2025-11-30 23:05:50,767 [INFO ]  Reading file context 1384 / 1384.
+2025-11-30 23:05:52,054 [INFO ]  Read 1384 entries into 775 file contexts.
+2025-11-30 23:05:53,490 [WARNI]  Missing 39 contexts in type transitions.
+2025-11-30 23:06:03,080 [INFO ]  Loading policy #2 (comet-ota-bp1a.250505.005-d344e885).
+2025-11-30 23:06:03,109 [INFO ]  Android version v15.13277524 (2025-05-05).
+2025-11-30 23:14:03,869 [INFO ]  Reading file context 1384 / 1384.
+2025-11-30 23:14:04,985 [INFO ]  Read 1384 entries into 775 file contexts.
+2025-11-30 23:14:06,534 [WARNI]  Missing 39 contexts in type transitions.
+2025-11-30 23:14:24,611 [INFO ]  L (ashmem_device) - R (ashmem_device) [EMPTY INTER]
+2025-11-30 23:14:41,794 [INFO ]  L (owntty_device) - R (owntty_device) [EMPTY INTER]
+2025-11-30 23:14:50,483 [INFO ]  Built InfoFlowGraph [N 773] [E 611754].
+
+
+2025-12-01 12:14:42,834 [INFO ]  Starting comparison of the specified policies.
+2025-12-01 12:14:42,844 [INFO ]  Loading policy #1 (comet-ota-bp1a.250405.007-3b5a62aa).
+2025-12-01 12:14:42,845 [INFO ]  Android version v15.13240079 (2025-04-05).
+2025-12-01 12:22:54,604 [INFO ]  Reading file context 1384 / 1384.
+2025-12-01 12:22:55,831 [INFO ]  Read 1384 entries into 775 file contexts.
+2025-12-01 12:22:57,082 [WARNI]  Missing 39 contexts in type transitions.
+2025-12-01 12:23:06,554 [INFO ]  Simplified graph to only object nodes. [N 775] [E 308205]
+2025-12-01 12:23:06,555 [INFO ]  Loaded graph in 10.6147 [N 2738] [E 44346]     [N 775] [E 308205]
+2025-12-01 12:23:06,562 [INFO ]  Loading policy #2 (15T).
+2025-12-01 12:23:06,563 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-01 12:23:06,563 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-01 12:42:09,387 [INFO ]  Reading file context 2271 / 2271.
+2025-12-01 12:42:13,244 [INFO ]  Read 2271 entries into 1321 file contexts.
+2025-12-01 12:42:15,312 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-01 12:42:37,711 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-01 12:42:37,713 [INFO ]  Loaded graph in 24.2528 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-01 12:43:42,593 [INFO ]  Built InfoFlowGraph [N 1635] [E 3746144].
+
+
+2025-12-01 15:17:27,025 [INFO ]  Starting comparison of the specified policies.
+2025-12-01 15:17:27,034 [INFO ]  Loading policy #1 (11T).
+2025-12-01 15:17:27,035 [WARNI]  Unhandled property at line 130.
+2025-12-01 15:17:27,035 [WARNI]  No simple incremental version: V816.0.17.0.UKWMIXM
+2025-12-01 15:17:27,036 [INFO ]  Android version v14.0 (2025-07-01).
+2025-12-01 15:25:49,093 [INFO ]  Reading file context 1940 / 1940.
+2025-12-01 15:25:51,239 [INFO ]  Read 1940 entries into 1135 file contexts.
+2025-12-01 15:25:51,995 [INFO ]  Saved 1135 file contexts to db (src/selinuxtool/android-extract/policies/xiaomi/11T/db).
+2025-12-01 15:25:53,601 [WARNI]  Missing 75 contexts in type transitions.
+2025-12-01 15:26:10,467 [INFO ]  Simplified graph to only object nodes. [N 1135] [E 807168]
+2025-12-01 15:26:10,468 [INFO ]  Loaded graph in 18.4715 [N 3822] [E 52122]     [N 1135] [E 807168]
+2025-12-01 15:26:10,475 [INFO ]  Loading policy #2 (15T).
+2025-12-01 15:26:10,476 [WARNI]  No simple incremental version: OS2.0.207.0.VOEMIXM
+2025-12-01 15:26:10,476 [INFO ]  Android version v15.0 (2025-10-01).
+2025-12-01 15:26:32,530 [INFO ]  Loaded 1321 file contexts from db (15T/db/file_contexts.db).
+2025-12-01 15:26:33,950 [WARNI]  Missing 66 contexts in type transitions.
+2025-12-01 15:26:56,669 [INFO ]  Simplified graph to only object nodes. [N 1321] [E 1074304]
+2025-12-01 15:26:56,670 [INFO ]  Loaded graph in 24.1347 [N 4244] [E 56784]     [N 1321] [E 1074304]
+2025-12-01 15:27:45,449 [INFO ]  Built InfoFlowGraph [N 1634] [E 3386632].
+[N 1634] [E 3386632]
