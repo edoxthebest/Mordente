@@ -1,10 +1,10 @@
 [project]
 name = "selinuxtool"
 version = "0.0.1"
-dependencies = []
+dependencies = ["networkx", "lark"]
 
 [project.scripts]
-selinuxtool = "selinuxtool.main:main"
+mordente = "selinuxtool.main:main"
 
 [dependency-groups]
 lint = [

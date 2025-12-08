@@ -3,8 +3,6 @@ import logging
 import time
 from pathlib import Path
 
-import numpy as np
-
 from selinuxtool.android.graph import InfoFlowGraph
 from selinuxtool.android.policy import Policy
 from selinuxtool.ifdif.parser import Parser
@@ -162,34 +160,26 @@ def policy_mode(args: argparse.Namespace) -> None:
     policy_left.load_policy(args.load, args.save, 0)
     policy_right.load_policy(args.load, args.save, 1)
 
-    timings = []
-    for _ in range(10):
-        graph = InfoFlowGraph(policy_left, policy_right)
-        graph.build_graph()
+    graph = InfoFlowGraph(policy_left, policy_right)
+    graph.build_graph()
 
-        init_time = time.time()
-        parser = Parser()
-        solver = Solver(graph)
-        queries = [
-            'label_2 (CRITICAL) and not label_1 (CRITICAL)',
-            'ito_2(label_2(CRITICAL) and not ito_1(label_2(CRITICAL)))',
-            '(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL))) and not (label_2(UNTRUSTED) and ito_1(label_2(CRITICAL)))',  # noqa: E501
-            '(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL))) and not (label_1(UNTRUSTED) and ito_1(label_1(CRITICAL)))',  # noqa: E501
-            '(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL)) and label_1(UNTRUSTED)) and not ito_1(label_1(CRITICAL))',  # noqa: E501
-            '(label_2(CRITICAL) and ifrom_2(label_2(UNTRUSTED))) and not (label_2(CRITICAL) and ifrom_1(label_2(UNTRUSTED)))',  # noqa: E501
-            '(ito_2(label_2(CRITICAL)) and label_1(UNTRUSTED)) and not label_2(TRUSTED)',
-        ]
-        for query in queries:
-            ast = parser.solve(query)
-            _logger.debug(solver.model(ast))
-        query_time = time.time() - init_time
-        _logger.info(f'Perfomed {len(queries)} queries in {query_time}.')
-
-        timings.append([graph._built_time, query_time])
-    print(timings)
-
-    average = np.mean(timings, axis=0)
-    print(average)
+    init_time = time.time()
+    parser = Parser()
+    solver = Solver(graph)
+    queries = [
+        'label_2 (CRITICAL) and not label_1 (CRITICAL)',
+        'ito_2(label_2(CRITICAL) and not ito_1(label_2(CRITICAL)))',
+        '(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL))) and not (label_2(UNTRUSTED) and ito_1(label_2(CRITICAL)))',  # noqa: E501
+        '(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL))) and not (label_1(UNTRUSTED) and ito_1(label_1(CRITICAL)))',  # noqa: E501
+        '(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL)) and label_1(UNTRUSTED)) and not ito_1(label_1(CRITICAL))',  # noqa: E501
+        '(label_2(CRITICAL) and ifrom_2(label_2(UNTRUSTED))) and not (label_2(CRITICAL) and ifrom_1(label_2(UNTRUSTED)))',  # noqa: E501
+        '(ito_2(label_2(CRITICAL)) and label_1(UNTRUSTED)) and not label_2(TRUSTED)',
+    ]
+    for query in queries:
+        ast = parser.solve(query)
+        _logger.debug(solver.model(ast))
+    query_time = time.time() - init_time
+    _logger.info(f'Perfomed {len(queries)} queries in {query_time}.')
 
 
 parser_ver.set_defaults(func=vertical_mode)

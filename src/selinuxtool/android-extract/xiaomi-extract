@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo 'Downloading Xiaomi firmware.'
+echo 'Please enter the corresponding download url when prompted.'
+
+read -p "11T - https://c.mi.com/global/miuidownload/detail/device/1900400: " xiaomi11t
+wget -q --show-progress -O 11T.zip "$xiaomi11t"
+./extract --vendor xiaomi --device 11T --filename 11T.zip
+
+read -p "14T - https://c.mi.com/global/miuidownload/detail/device/1903070: " xiaomi14t
+wget -q --show-progress -O 14T.zip "$xiaomi14t"
+./extract --vendor xiaomi --device 14T --filename 14T.zip --xiaomi
+
+read -p "15T - https://c.mi.com/global/miuidownload/detail/device/1903375: " xiaomi15t
+wget -q --show-progress -O 15T.zip "$xiaomi15t"
+./extract --vendor xiaomi --device 15T --filename 15T.zip --xiaomi
+

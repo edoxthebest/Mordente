@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Extract the 3 pixel policies
+./pixel-extract
+
+# Extract the 3 xiaomi policies
+./xiaomi-extract
+
+# Move the policies to a common location
+cd ../../../
+mkdir -p policies/p{1..6}
+cd -
+mv policies/pixel/comet/comet-ota-ad1a.240530.030-98066022/*  ../../../policies/p1
+mv policies/pixel/comet/comet-ota-ap3a.241005.015-5350adac/*  ../../../policies/p2
+mv policies/pixel/comet/comet-ota-bp2a.250605.031.a3-b6c67e0a/*  ../../../policies/p3
+mv policies/xiaomi/11T/11T/*  ../../../policies/p4
+mv policies/xiaomi/14T/14T/*  ../../../policies/p5
+mv policies/xiaomi/15T/15T/*  ../../../policies/p6

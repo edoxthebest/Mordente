@@ -72,6 +72,14 @@ while true; do
       full=true
       ;;
 
+    --xiaomi)
+      xiaomi=true
+      ;;
+
+    --no-cleanup)
+      nocleanup=true
+      ;;
+
     *)
       break
       ;;
@@ -97,15 +105,13 @@ if [[ $url ]]; then
       fail '  ERROR: checksum does not match.'
     fi
   fi
-
-  # Assume the unzipped payload is payload.bin
-  echo "Unzipping downloaded file..."
-  unzip $filename payload.bin
-  rm $filename
 fi
 
-# We only need system.img and vendor.img
-#TODO: we might need odm too (based on vendor)
+# Assume the unzipped payload is payload.bin
+echo "Unzipping downloaded file..."
+unzip $filename payload.bin
+if [[ $nocleanup ]]; then echo 'Not removing file'; else rm $filename; fi
+
 if ! payload-dumper-go -l payload.bin | grep system | grep -q vendor; then
   fail "ERROR: payload does not contain required partitions."
 fi
@@ -113,23 +119,28 @@ fi
 if [[ $full ]]; then
   echo "Extracting required partitions: product.img, system.img, system_ext.img and vendor.img."
   payload-dumper-go -o extracted -partitions product,system,system_ext,vendor payload.bin
+elif [[ $xiaomi ]]; then
+  echo "Extracting required Xiaomi partitions: system.img, odm.img and vendor.img."
+  payload-dumper-go -o extracted -partitions system,odm,vendor payload.bin
 else
   echo "Extracting required partitions: system.img and vendor.img."
   payload-dumper-go -o extracted -partitions system,vendor payload.bin
 fi
-rm payload.bin
+if [[ $nocleanup ]]; then echo 'Not removing payload'; else rm payload.bin; fi
 
 
-if ! [[ $filename ]]; then
-  filename=default
-fi
+# if ! [[ $filename ]]; then
+#   filename=default
+# fi
 
 # Mount the required file system 
 echo "Mounting filesystems."
-mkdir -p mnt/product mnt/system mnt/system_ext mnt/vendor
+mkdir -p mnt/product mnt/system mnt/system_ext mnt/vendor mnt/odm
 if [[ $full ]]; then
   sudo mount -o ro extracted/product.img mnt/product
   sudo mount -o ro extracted/system_ext.img mnt/system_ext
+elif [[ $xiaomi ]]; then
+  sudo mount -o ro extracted/odm.img mnt/odm
 fi
 sudo mount -o ro extracted/system.img mnt/system
 sudo mount -o ro extracted/vendor.img mnt/vendor
@@ -143,7 +154,11 @@ sudo cp mnt/system/system/build.prop $policies_dir
 sudo chown $user:$user "${policies_dir}/build.prop"
 cp mnt/system/system/etc/selinux/plat_file_contexts $policies_dir
 cp mnt/vendor/etc/selinux/vendor_file_contexts $policies_dir
-cp mnt/vendor/etc/selinux/precompiled_sepolicy $policies_dir
+if [[ $xiaomi ]]; then
+  cp mnt/odm/etc/selinux/precompiled_sepolicy $policies_dir
+else
+  cp mnt/vendor/etc/selinux/precompiled_sepolicy $policies_dir
+fi
 if [[ $full ]]; then
   mkdir "${policies_dir}/product" "${policies_dir}/system" \
         "${policies_dir}/system_ext" "${policies_dir}/vendor"
@@ -158,6 +173,8 @@ echo "Cleaning up."
 if [[ $full ]]; then
   sudo umount -l mnt/product
   sudo umount -l mnt/system_ext
+elif [[ $xiaomi ]]; then
+  sudo umount -l mnt/odm
 fi
 sudo umount -l mnt/system
 sudo umount -l mnt/vendor
@@ -165,6 +182,8 @@ rmdir mnt/product mnt/system mnt/system_ext mnt/vendor mnt
 if [[ $full ]]; then
   rm extracted/system_ext.img
   rm extracted/product.img
+elif [[ $xiaomi ]]; then
+  rm extracted/odm.img
 fi
-rm extracted/system.img
-rm extracted/vendor.img
+if [[ $nocleanup ]]; then echo 'Not removing system.img'; else  rm extracted/system.img; fi
+if [[ $nocleanup ]]; then echo 'Not removing vendor.img'; else rm extracted/vendor.img; fi

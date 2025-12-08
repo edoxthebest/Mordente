@@ -1,4 +1,7 @@
 import logging
+from pathlib import Path
+
+Path('logs/').mkdir(exist_ok=True)
 
 logger = logging.getLogger('SELinuxTool')
 logFormatter = logging.Formatter('%(asctime)s [%(levelname)-5.5s]  %(message)s')
@@ -14,7 +17,7 @@ rlogger.addHandler(rhandler)
 
 flogger = logging.getLogger('SELinuxTool:f')
 flogFormatter = logging.Formatter('[%(levelname)-5.5s]  %(message)s')
-file_handler = logging.FileHandler('log/default.log')
+file_handler = logging.FileHandler('logs/default.log')
 file_handler.setFormatter(flogFormatter)
 flogger.addHandler(file_handler)
 
