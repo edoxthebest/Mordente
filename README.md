@@ -43,7 +43,7 @@ cd src/selinuxtool/android-extract
 ```
 
 ## Build the Mordente container with Docker
-To build the Docker image run:
+First, clone the required dependencies as above, then you can build the Docker image with the following.
 ```
 docker build -t mordente .
 ```
