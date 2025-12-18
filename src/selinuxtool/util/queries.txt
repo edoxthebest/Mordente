@@ -1,0 +1,7 @@
+label_2 (CRITICAL) and not label_1 (CRITICAL)
+ito_2(label_2(CRITICAL) and not ito_1(label_2(CRITICAL)))
+(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL))) and not (label_2(UNTRUSTED) and ito_1(label_2(CRITICAL)))
+(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL))) and not (label_1(UNTRUSTED) and ito_1(label_1(CRITICAL)))
+(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL)) and label_1(UNTRUSTED)) and not ito_1(label_1(CRITICAL))
+(label_2(CRITICAL) and ifrom_2(label_2(UNTRUSTED))) and not (label_2(CRITICAL) and ifrom_1(label_2(UNTRUSTED)))
+(ito_2(label_2(CRITICAL)) and label_1(UNTRUSTED)) and not label_2(TRUSTED)

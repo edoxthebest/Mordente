@@ -24,7 +24,7 @@ parser_ver.add_argument('device', nargs='?', help='a specific device')
 parser_pol = subparsers.add_parser('policy', help='compare the two provided policies')
 parser_pol.add_argument('first', help='the first policy to compare')
 parser_pol.add_argument('second', help='the second policy to compare')
-
+parser_pol.add_argument('--queries', type=str, help='a file of queries to be performed')
 
 # Generic setup
 parser.add_argument('-v', '--verbose', action='store_true', help='prints debug info')
@@ -162,22 +162,26 @@ def policy_mode(args: argparse.Namespace) -> None:
 
     graph = InfoFlowGraph(policy_left, policy_right)
     graph.build_graph()
-
+    
+    if args.queries:
+        query_path = Path(args.queries)
+    else:
+        query_path = Path('src/selinuxtool/util/queries.txt')
+    with open(query_path) as query_file:
+        queries = [ line.rstrip() for line in query_file ]
     init_time = time.time()
     parser = Parser()
     solver = Solver(graph)
-    queries = [
-        'label_2 (CRITICAL) and not label_1 (CRITICAL)',
-        'ito_2(label_2(CRITICAL) and not ito_1(label_2(CRITICAL)))',
-        '(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL))) and not (label_2(UNTRUSTED) and ito_1(label_2(CRITICAL)))',  # noqa: E501
-        '(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL))) and not (label_1(UNTRUSTED) and ito_1(label_1(CRITICAL)))',  # noqa: E501
-        '(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL)) and label_1(UNTRUSTED)) and not ito_1(label_1(CRITICAL))',  # noqa: E501
-        '(label_2(CRITICAL) and ifrom_2(label_2(UNTRUSTED))) and not (label_2(CRITICAL) and ifrom_1(label_2(UNTRUSTED)))',  # noqa: E501
-        '(ito_2(label_2(CRITICAL)) and label_1(UNTRUSTED)) and not label_2(TRUSTED)',
-    ]
     for query in queries:
         ast = parser.solve(query)
-        _logger.debug(solver.model(ast))
+        model = solver.model(ast)
+        _logger.info(f'Query perfomed `{query}`')
+        if len(model) == 0:
+            _logger.info(f'{BIG_IND} TRUE')
+        else:
+            _logger.info(f'{BIG_IND} FALSE, the following labels are counterexamples {model}')
+  
+            
     query_time = time.time() - init_time
     _logger.info(f'Perfomed {len(queries)} queries in {query_time}.')
 

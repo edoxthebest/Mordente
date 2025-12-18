@@ -27,13 +27,12 @@ Refer to the manual page for `payload-dumper-go` for more details.
 
 
 ## About policy download
-Policies used during the experiments can be downloaded and extracted automatically.
-Beware that some interaction is required to download Xiaomi policies: when prompted you will be asked to enter an url; open the link provided with the prompt in your browser and copy the link found at the button `Download Full Rom` into the prompt.
+Policies used during the experiments can be downloaded and extracted semi-automatically.
+You can either download them before building the docker image or download them inside a container running with said image.
+Beware that some interaction is required to download Xiaomi policies: when prompted you will be asked to enter an url; open the link provided with the prompt in your browser and copy the link that the button `Download Full Rom` is pointing to into the prompt.
 
-You can either download them before building the image or download them inside a container running with said image.
 
-To manually download them proceed as follows.
-
+To download them before building the docker image proceed as follows.
 
 Make sure to be in the same folder where you downloaded `payload-dumper-go`, otherwise cd there, then execute the download script.
 You may also be required to enter your password since root privileges are needed to correctly mount the required partitions
@@ -68,9 +67,19 @@ cd src/selinuxtool/android-extract
 ## Replicate the testing suite using Docker
 Assuming we are already inside the container you can replicate the experiments of the paper with the following.
 ```
-mordente -l policy policies/p1 policies/p2
-mordente -l policy policies/p2 policies/p3
-mordente -l policy policies/p1 policies/p4
-mordente -l policy policies/p2 policies/p5
-mordente -l policy policies/p2 policies/p6
+mordente policy policies/p1 policies/p2
+mordente policy policies/p2 policies/p3
+mordente policy policies/p1 policies/p4
+mordente policy policies/p2 policies/p5
+mordente policy policies/p2 policies/p6
+```
+
+
+## Using Mordente
+Mordente is used by specifying the paths of two policies one's whishes to compare.
+By default, a predefined list of queries will be perfomed.
+Use the option `--queries` together with a path to specify a different set of queries (one per line).
+Mordente then can be run as follows.
+```
+mordente policy --queries {path_of_the_queries} {path_of_the_first_policy} {path_of_the_second_policy}
 ```
