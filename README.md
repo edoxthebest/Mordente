@@ -1,5 +1,51 @@
 # Mordente
-Mordente is a tool to perform a differential verification of information flow requirements in SEAndroid access control policies.
+The artifact contains Mordente, a tool for comparing different SEAndroid policies.
+Mordente is a model checker for the novel comparative modal logic CML and implements the algorithms introduced in the *corresponding paper --da inserire?*.
+Mordente takes as input a pair of SEAndroid policies and a list of CML properties to verify.
+The artifact also includes an auxiliary tool to extract SEAndroid policies from Android images, so they can be passed as input to Mordente. 
+As a minimal example, we provide a pair of simple policies and instructions for running a kick-the-tire test. 
+Finally, we provide instructions to recover the real-world policies used in our paper for performance evaluation, and a script for replicating our results.
+
+
+## TODOs
+Installazione: assumendo di avere l'immagine gia pronta non dovrebbe essere complicato
+  basta creare un container e poi c'e da scaricare le politiche
+Mancano poi le policy da scaricare
+Si puo avere linux/amd64 and linux/arm64 -> da specificare credo
+da recuperare le politiche di esempio per lo smoke test
+migliorare come utilizzare il tool
+  da aggiornare il codice del main
+  da spiegare la sintassi delle queries
+
+
+## Installation
+Assuming we have an image available (eg extracted and ready)
+
+### Setting up the Mordente container
+First create a container with the provided Mordente image.
+```
+docker container create -it --name mordente {mordente_image}
+```
+
+Connect to the container with
+```
+docker container start mordente
+docker exec -it mordente /bin/bash
+```
+
+### Downloading the policies required to perform the experiments
+The Mordente image does not contain the required SEAndroid policies, rather they must be extracted from each respective firmware image which can be downloaded from the manufacturers websites as detailed in the following table.
+
+>> tabella con vari url
+
+Once downloaded they should be copied inside the container with their respective names changed as follows.
+```
+docker cp {downloaded_file.zip} mordente:/usr/local/Mordente/{p#}.zip  
+```
+
+>> sudo non funziona, facciamo versione extract ad-hoc
+
+---------
 
 ## Prerequisites
 Clone the main repository
@@ -10,7 +56,8 @@ git clone https://github.com/edoxthebest/Mordente.git
 Clone the libraries on which Mordente relies
 ```
 cd mordente
-git clone https://github.com/edoxthebest/mata.git
+%git clone https://github.com/edoxthebest/mata.git
+git clone --branch 1.20.0 --depth 1 https://github.com/VeriFIT/mata
 git clone --branch 4.5.1 --depth 1 https://github.com/SELinuxProject/setools.git 
 git clone --branch 3.8.1 --depth 1 git@github.com:SELinuxProject/selinux.git
 ```
