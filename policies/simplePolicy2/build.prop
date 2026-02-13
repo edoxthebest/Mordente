@@ -1,0 +1,5 @@
+# begin build properties
+ro.build.version.incremental=2
+ro.build.version.release=15
+ro.build.version.security_patch=2026-02-01
+ro.build.version.base_os=

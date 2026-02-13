@@ -1,0 +1,14 @@
+(sid kernel) (sidorder (kernel))
+
+(class file (read write)) 
+(classorder (file))
+
+(type untrustedA) 
+(type untrustedB) 
+(type criticalC) 
+(type safeD) 
+
+
+(allow criticalC untrustedA (file (write)))
+(allow criticalC safeD (file (read)))
+(allow untrustedB safeD (file (write)))

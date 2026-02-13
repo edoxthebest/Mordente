@@ -1,0 +1,2 @@
+label_2 (CRITICAL) and not label_1 (CRITICAL)
+ito_2(label_2(CRITICAL)) and not ito_1(label_2(CRITICAL))
