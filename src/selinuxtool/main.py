@@ -1,5 +1,6 @@
 import argparse
 import logging
+import sys
 import time
 from pathlib import Path
 
@@ -21,10 +22,10 @@ parser_ver.add_argument(
 parser_ver.add_argument('device', nargs='?', help='a specific device')
 
 # Policy mode
-parser_pol = subparsers.add_parser('policy', help='compare the two provided policies')
+parser_pol = subparsers.add_parser('policy', help='compare the two provided policies over a set of queries')
+parser_pol.add_argument('queries', type=str, help='a file of queries to be performed')
 parser_pol.add_argument('first', help='the first policy to compare')
 parser_pol.add_argument('second', help='the second policy to compare')
-parser_pol.add_argument('--queries', type=str, help='a file of queries to be performed')
 
 # Generic setup
 parser.add_argument('-v', '--verbose', action='store_true', help='prints debug info')
@@ -58,6 +59,9 @@ _permmapfile: Path | None = None
 
 
 def main() -> None:
+    # Set default mode to policy
+    if len(sys.argv) > 1 and sys.argv[1] not in {'vertical', 'policy', '-h', '--help'}:
+        sys.argv.insert(1, 'policy')
     args = parser.parse_args()
 
     for logger in [_logger, _rlogger, _flogger, _blogger]:
@@ -163,11 +167,7 @@ def policy_mode(args: argparse.Namespace) -> None:
     graph = InfoFlowGraph(policy_left, policy_right)
     graph.build_graph()
     
-    if args.queries:
-        query_path = Path(args.queries)
-    else:
-        query_path = Path('src/selinuxtool/util/queries.txt')
-    with open(query_path) as query_file:
+    with open(args.queries) as query_file:
         queries = [ line.rstrip() for line in query_file ]
     init_time = time.time()
     parser = Parser()
