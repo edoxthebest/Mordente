@@ -66,16 +66,7 @@ Where
 - `policy1` is the file of the first SEAndroid file
 - `policy2` is the file of the second SEAndroid file
 
-### Extracting Policies from an Android Images with SEAExtract
 
-SEAExtract is an auxiliary tool that helps you extract the SEAndroid policy of a given Android Image.
-Tu use it, run the following command:
-```
-SEAExtract {image} {policy}
-```
-Where
-- `image` is the Android image file
-- `policy` is the filepath where SEAExtract will write the extracted policy
 
 ## Kick-the-tire Test
 
@@ -86,29 +77,12 @@ To test `Mordente`, run the following command:
 mordente queries/CMLformulas policies/simplePolicy1 policies/simplePolicy2
 ```
 
-The expected output is as follows:
+The expected output is as follows (some lines are omitted for brevity):
 ```
 # mordente queries/CMLformulas policies/simplePolicy1 policies/simplePolicy2 
 
 2026-02-13 14:29:53,701 [INFO ]  Starting comparison of the specified policies.
-2026-02-13 14:29:53,726 [INFO ]  Loading policy #1 (simplePolicy1).
-2026-02-13 14:29:53,727 [WARNI]  Unhandled property at line 4.
-2026-02-13 14:29:53,728 [INFO ]  Android version v15.1 (2026-01-01).
-2026-02-13 14:29:53,733 [INFO ]  Reading file context 4 / 4.
-2026-02-13 14:29:53,733 [INFO ]  Read 4 entries into 4 file contexts.
-2026-02-13 14:29:53,735 [WARNI]  Missing 0 contexts in type transitions.
-2026-02-13 14:29:53,735 [INFO ]  Simplified graph to only object nodes. [N 4] [E 3]
-2026-02-13 14:29:53,735 [INFO ]  Loaded graph in 0.0012 [N 4] [E 3]	[N 4] [E 3]
-2026-02-13 14:29:53,736 [INFO ]  Loaded policy #1 in 0.00916290283203125.
-2026-02-13 14:29:53,736 [INFO ]  Loading policy #2 (simplePolicy2).
-2026-02-13 14:29:53,736 [WARNI]  Unhandled property at line 4.
-2026-02-13 14:29:53,736 [INFO ]  Android version v15.2 (2026-02-01).
-2026-02-13 14:29:53,742 [INFO ]  Reading file context 5 / 5.
-2026-02-13 14:29:53,743 [INFO ]  Read 5 entries into 4 file contexts.
-2026-02-13 14:29:53,743 [WARNI]  Missing 0 contexts in type transitions.
-2026-02-13 14:29:53,744 [INFO ]  Simplified graph to only object nodes. [N 4] [E 3]
-2026-02-13 14:29:53,744 [INFO ]  Loaded graph in 0.0014 [N 4] [E 3]	[N 4] [E 3]
-2026-02-13 14:29:53,745 [INFO ]  Loaded policy #2 in 0.008874654769897461.
+...
 2026-02-13 14:29:53,748 [INFO ]  Built InfoFlowGraph [N 5] [E 9] in 0.0018181800842285156.
 2026-02-13 14:29:53,794 [INFO ]  Query perfomed `label_2 (CRITICAL) and not label_1 (CRITICAL)`
 2026-02-13 14:29:53,794 [INFO ]         TRUE
@@ -117,9 +91,19 @@ The expected output is as follows:
 2026-02-13 14:29:53,795 [INFO ]  Perfomed 2 queries in 0.046329498291015625.
 ```
 
->> dovremmo dare una spiegazione del perche di sopra?
+>>> dovremmo dare una spiegazione del perche di sopra?
+
 
 ## How to Replicate the Experiments of the Paper
+<!-- 
+### Requirements
+The tool [`payload-dumper-go`](https://github.com/ssut/payload-dumper-go) is needed to extract the policies from a given android firmware.
+Unzip the version for your distribution and grant it execution permissions.
+```
+tar -xvzf payload-dumper-go_1.3.0_linux_amd64.tar.gz
+chmod +x payload-dumper-go
+```
+Refer to the manual page for `payload-dumper-go` for more details. -->
 
 
 ### Downloading the policies required to perform the experiments
@@ -127,21 +111,59 @@ The real-world SEAndroid policies that we used for performance evaluation can be
 
 First, each respective firmware image must be downloaded from the manufacturers websites:
 
-| Number | Android Image                                 | url to the image      |
+| Number | Android Image                                 | URLs      |
 | ------ | ----------------------------------------------| --------------------- |
 |   1    | Pixel 9 Pro Fold (Comet) - Android version 14 | https://dl.google.com/dl/android/aosp/comet-ota-ad1a.240530.030-98066022.zip |
 |   2    | Pixel 9 Pro Fold (Comet) - Android version 15 | https://dl.google.com/dl/android/aosp/comet-ota-ap3a.241005.015-5350adac.zip |
 |   3    | Pixel 9 Pro Fold (Comet) - Android version 16 | https://dl.google.com/dl/android/aosp/comet-ota-bp2a.250605.031.a3-b6c67e0a.zip |
-|   4    | Xiaomi 11T                                    | https://c.mi.com/global/miuidownload/detail/device/1900400: |
-|   5    | Xiaomi 14T                                    | https://c.mi.com/global/miuidownload/detail/device/1903070: |
-|   6    | Xiaomi 15T                                    | https://c.mi.com/global/miuidownload/detail/device/1903375: |
+|   4    | Xiaomi 11T                                    | https://c.mi.com/global/miuidownload/detail/device/1900400 |
+|   5    | Xiaomi 14T                                    | https://c.mi.com/global/miuidownload/detail/device/1903070 |
+|   6    | Xiaomi 15T                                    | https://c.mi.com/global/miuidownload/detail/device/1903375 |
 
-Once downloaded they should be copied inside the container, and their names changed as follows, where `#n` is the number of the image.
+Once the firmware is downloaded, copy the zip file to the shared `policies` folder, then the SEAndroid policy can be extracted as follows.
+
+
+### Extracting Policies from an Android Images with SEAExtract
+SEAExtract is an auxiliary script that helps you extract the SEAndroid policy of a given Android Image.
+To use it, run the following command inside the Mordente container:
+```
+./SEAExtract [--xiaomi] {image} {policy}
+```
+Where
+- `image` is the Android image file
+- `policy` is the filepath where SEAExtract will write the extracted policy
+- `--xiaomi` should be used when extracting xiaomi policies
+
+The following should extract all the policies required to replicate the experiments (assuming all have been downloaded and placed in the `policies` folder).
+```
+cd policies
+../SEAExtract comet-ota-ad1a.240530.030-98066022.zip p1
+../SEAExtract --xiaomi miui_AGATEGlobal_OS1.0.17.0.UKWMIXM_2deb69168e_14.0.zip p4
+../SEAExtract --xiaomi degas_global-ota_full-OS2.0.208.0.VNEMIXM-user-15.0-4434ede5b4.zip p5
+../SEAExtract --xiaomi goya_global-ota_full-OS3.0.8.0.WOEMIXM-user-16.0-345b449a05.zip p6
+cd ..
+```
+
+
+<!-- Once downloaded they should be copied inside the container, and their names changed as follows, where `#n` is the number of the image.
 ```
 docker cp {downloaded_file_of_image_#n.zip} mordente:/usr/local/Mordente/{p#n}.zip  
+``` -->
+
+
+
+
+### Running the Experiments
+To perform the experiments as detailed in the correlated paper use Mordente as follows.
+```
+mordente queries/experiments policies/p1 policies/p2
+mordente queries/experiments policies/p2 policies/p3
+mordente queries/experiments policies/p1 policies/p4
+mordente queries/experiments policies/p2 policies/p5
+mordente queries/experiments policies/p2 policies/p6
 ```
 
->> sudo non funziona, facciamo versione extract ad-hoc
+
 
 ## Manually Replicating the Experiments
 

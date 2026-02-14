@@ -1,0 +1,27 @@
+# mordente queries/CMLformulas policies/simplePolicy1 policies/simplePolicy2 
+
+2026-02-13 14:29:53,701 [INFO ]  Starting comparison of the specified policies.
+2026-02-13 14:29:53,726 [INFO ]  Loading policy #1 (simplePolicy1).
+2026-02-13 14:29:53,727 [WARNI]  Unhandled property at line 4.
+2026-02-13 14:29:53,728 [INFO ]  Android version v15.1 (2026-01-01).
+2026-02-13 14:29:53,733 [INFO ]  Reading file context 4 / 4.
+2026-02-13 14:29:53,733 [INFO ]  Read 4 entries into 4 file contexts.
+2026-02-13 14:29:53,735 [WARNI]  Missing 0 contexts in type transitions.
+2026-02-13 14:29:53,735 [INFO ]  Simplified graph to only object nodes. [N 4] [E 3]
+2026-02-13 14:29:53,735 [INFO ]  Loaded graph in 0.0012 [N 4] [E 3]	[N 4] [E 3]
+2026-02-13 14:29:53,736 [INFO ]  Loaded policy #1 in 0.00916290283203125.
+2026-02-13 14:29:53,736 [INFO ]  Loading policy #2 (simplePolicy2).
+2026-02-13 14:29:53,736 [WARNI]  Unhandled property at line 4.
+2026-02-13 14:29:53,736 [INFO ]  Android version v15.2 (2026-02-01).
+2026-02-13 14:29:53,742 [INFO ]  Reading file context 5 / 5.
+2026-02-13 14:29:53,743 [INFO ]  Read 5 entries into 4 file contexts.
+2026-02-13 14:29:53,743 [WARNI]  Missing 0 contexts in type transitions.
+2026-02-13 14:29:53,744 [INFO ]  Simplified graph to only object nodes. [N 4] [E 3]
+2026-02-13 14:29:53,744 [INFO ]  Loaded graph in 0.0014 [N 4] [E 3]	[N 4] [E 3]
+2026-02-13 14:29:53,745 [INFO ]  Loaded policy #2 in 0.008874654769897461.
+2026-02-13 14:29:53,748 [INFO ]  Built InfoFlowGraph [N 5] [E 9] in 0.0018181800842285156.
+2026-02-13 14:29:53,794 [INFO ]  Query perfomed `label_2 (CRITICAL) and not label_1 (CRITICAL)`
+2026-02-13 14:29:53,794 [INFO ]         TRUE
+2026-02-13 14:29:53,795 [INFO ]  Query perfomed `ito_2(label_2(CRITICAL)) and not ito_1(label_2(CRITICAL))`
+2026-02-13 14:29:53,795 [INFO ]         FALSE, the following labels are counterexamples {('untrustedB', 'untrustedB'), ('untrustedA', 'safeD')}
+2026-02-13 14:29:53,795 [INFO ]  Perfomed 2 queries in 0.046329498291015625.

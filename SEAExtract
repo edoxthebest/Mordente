@@ -1,0 +1,91 @@
+#!/bin/bash
+
+fail() {
+  echo "$@" 1>&2
+  exit 1
+}
+
+if ! [[ ":$PATH:" == *":$(pwd):"* ]]; then
+  PATH="$PATH:$(pwd)"
+fi
+
+if ! command -v payload-dumper-go 2>&1 >/dev/null
+then
+  fail "ERROR: payload-dumper-go is not installed."
+fi
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h)
+      echo "./SEAExtract {image} {policy}"
+      exit 0
+      ;;
+
+    --xiaomi)
+      xiaomi=true
+      shift
+      ;;
+
+    --no-cleanup)
+      nocleanup=true
+      shift
+      ;;
+
+    *)
+      POS_ARGS+=("$1")
+      shift
+      ;;
+  esac
+done
+
+set -- "${POS_ARGS[@]}"
+
+image="$1"
+policy_dir="$2"
+
+# Assume the unzipped payload is payload.bin
+echo "Unzipping downloaded file..."
+unzip $image payload.bin
+# if [[ $nocleanup ]]; then echo 'Not removing file'; else rm $image; fi
+
+if ! payload-dumper-go -l payload.bin | grep system | grep -q vendor; then
+  fail "ERROR: payload does not contain required partitions."
+fi
+
+# Extract the partitions
+if [[ $xiaomi ]]; then
+  echo "Extracting required Xiaomi partitions: system.img, odm.img and vendor.img."
+  payload-dumper-go -o extracted -partitions system,odm,vendor payload.bin
+else
+  echo "Extracting required partitions: system.img and vendor.img."
+  payload-dumper-go -o extracted -partitions system,vendor payload.bin
+fi
+if [[ $nocleanup ]]; then echo 'Not removing payload'; else rm payload.bin; fi
+
+# Copy the policy files
+echo "Extracting files."
+mkdir -p $policy_dir
+if [[ $xiaomi ]]; then
+  fsck.erofs --extract=./xiaomi_raw extracted/system.img
+  cp xiaomi_raw/system/build.prop $policy_dir
+  cp xiaomi_raw/system/etc/selinux/plat_file_contexts $policy_dir
+  rm -rf xiaomi_raw
+
+  fsck.erofs --extract=./xiaomi_raw extracted/vendor.img
+  cp xiaomi_raw/etc/selinux/vendor_file_contexts $policy_dir
+  if [[ -f extracted/odm.img ]]; then
+    rm -rf xiaomi_raw
+    fsck.erofs --extract=./xiaomi_raw extracted/odm.img
+  fi
+  cp xiaomi_raw/etc/selinux/precompiled_sepolicy $policy_dir
+  rm -rf xiaomi_raw
+else
+  7z e extracted/system.img system/build.prop -o$policy_dir > /dev/null
+  7z e extracted/system.img system/etc/selinux/plat_file_contexts -o$policy_dir > /dev/null
+  7z e extracted/vendor.img etc/selinux/vendor_file_contexts -o$policy_dir > /dev/null
+  7z e extracted/vendor.img etc/selinux/precompiled_sepolicy -o$policy_dir > /dev/null
+fi
+
+# Cleanup
+echo "Cleaning up."
+if [[ $nocleanup ]]; then echo 'Not removing images.'; else  rm -rf extracted; fi
