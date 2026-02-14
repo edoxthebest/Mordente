@@ -1,4 +1,4 @@
-FROM python:3.13 AS libmata
+FROM --platform=$BUILDPLATFORM python:3.13 AS libmata
 WORKDIR /usr/local/mata
 
 COPY mata .
@@ -26,6 +26,8 @@ WORKDIR /usr/local/Mordente
 COPY pyproject.toml ./
 COPY src ./src
 COPY policies ./policies
+COPY queries ./queries
+COPY SEAExtract ./
 
 RUN pip install -e .
 
@@ -33,9 +35,12 @@ RUN pip install -e .
 FROM mordente
 WORKDIR /usr/local/payload-dumper
 
-RUN wget -q https://github.com/ssut/payload-dumper-go/releases/download/1.3.0/payload-dumper-go_1.3.0_linux_amd64.tar.gz
-RUN tar -xvzf payload-dumper-go_1.3.0_linux_amd64.tar.gz
+ARG TARGETARCH
+COPY "payload-dumper-go_1.3.0_linux_${TARGETARCH}.tar.gz" .
+RUN tar -xvzf "payload-dumper-go_1.3.0_linux_${TARGETARCH}.tar.gz"
 RUN chmod +x payload-dumper-go
 RUN mv payload-dumper-go /usr/local/bin
+
+RUN apt-get update && apt-get install -y p7zip erofs-utils
 
 WORKDIR /usr/local/Mordente

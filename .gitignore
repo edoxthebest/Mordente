@@ -8,3 +8,9 @@ log
 
 # Policies dbs
 policies/**/db/*
+
+# Payload dumper
+payload-dumper-go_*.tar.gz
+
+# Images
+images/*.tar.gz

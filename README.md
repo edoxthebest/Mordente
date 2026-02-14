@@ -32,23 +32,25 @@ where
 
 The valid CML atomic propositions that can be used with Mordente are:
 - Any type name of the SEAndroid configurations in input
-- The three special propositions `crit`, `untr` and `usr`, which stands for critical, untrusted and usr, and are associated with files by an heuristic based on the label name, its substrings and some common naming conventions for SEAndroid configurations.
+- The three special propositions `CRITICAL`, `UNTRUSTED` and `TRUSTED`, which are associated with files by an heuristic based on the label name, its substrings and some common naming conventions for SEAndroid configurations.
 
 ## Installation
-The file named `morente_image` contains the docker image of Mordente.
+A docker image containing Mordente is provided for both linux/amd64 and linux/arm64 systems.
+The tool relies on SETools, a collection of libraries to analyse SELinux policies, and thus it is not available on other ecosystems.
 
 
-### Prerequisites
-
-TODO
+The file named `mordente.tar.gz` contained in the folder `images` contains the docker image of Mordente which can be loaded with the following.
+```
+docker load < images/mordente.tar.gz
+```
 
 ### Setting up the Mordente container
 First create a container with the provided Mordente image.
 ```
-docker container create -it --name mordente {mordente_image}
+docker container create -it -v ./policies:/usr/local/Mordente/policies --name mordente edoxthebest/mordente
 ```
 
-Connect to the container with
+Then you can run the container and connect to it as follows.
 ```
 docker container start mordente
 docker exec -it mordente /bin/bash
@@ -91,20 +93,8 @@ The expected output is as follows (some lines are omitted for brevity):
 2026-02-13 14:29:53,795 [INFO ]  Perfomed 2 queries in 0.046329498291015625.
 ```
 
->>> dovremmo dare una spiegazione del perche di sopra?
-
 
 ## How to Replicate the Experiments of the Paper
-<!-- 
-### Requirements
-The tool [`payload-dumper-go`](https://github.com/ssut/payload-dumper-go) is needed to extract the policies from a given android firmware.
-Unzip the version for your distribution and grant it execution permissions.
-```
-tar -xvzf payload-dumper-go_1.3.0_linux_amd64.tar.gz
-chmod +x payload-dumper-go
-```
-Refer to the manual page for `payload-dumper-go` for more details. -->
-
 
 ### Downloading the policies required to perform the experiments
 The real-world SEAndroid policies that we used for performance evaluation can be retrived as detailed below.
@@ -120,7 +110,7 @@ First, each respective firmware image must be downloaded from the manufacturers 
 |   5    | Xiaomi 14T                                    | https://c.mi.com/global/miuidownload/detail/device/1903070 |
 |   6    | Xiaomi 15T                                    | https://c.mi.com/global/miuidownload/detail/device/1903375 |
 
-Once the firmware is downloaded, copy the zip file to the shared `policies` folder, then the SEAndroid policy can be extracted as follows.
+Once the firmware is downloaded, copy the zip file to the shared `policies` folder, then connect to the container and extract the SEAndroid policy as follows.
 
 
 ### Extracting Policies from an Android Images with SEAExtract
@@ -138,6 +128,8 @@ The following should extract all the policies required to replicate the experime
 ```
 cd policies
 ../SEAExtract comet-ota-ad1a.240530.030-98066022.zip p1
+../SEAExtract comet-ota-ap3a.241005.015-5350adac.zip p2
+../SEAExtract comet-ota-bp2a.250605.031.a3-b6c67e0a.zip p3
 ../SEAExtract --xiaomi miui_AGATEGlobal_OS1.0.17.0.UKWMIXM_2deb69168e_14.0.zip p4
 ../SEAExtract --xiaomi degas_global-ota_full-OS2.0.208.0.VNEMIXM-user-15.0-4434ede5b4.zip p5
 ../SEAExtract --xiaomi goya_global-ota_full-OS3.0.8.0.WOEMIXM-user-16.0-345b449a05.zip p6
@@ -145,16 +137,8 @@ cd ..
 ```
 
 
-<!-- Once downloaded they should be copied inside the container, and their names changed as follows, where `#n` is the number of the image.
-```
-docker cp {downloaded_file_of_image_#n.zip} mordente:/usr/local/Mordente/{p#n}.zip  
-``` -->
-
-
-
-
 ### Running the Experiments
-To perform the experiments as detailed in the correlated paper use Mordente as follows.
+To perform the experiments on a default set of queries as detailed in the correlated paper use Mordente as follows.
 ```
 mordente queries/experiments policies/p1 policies/p2
 mordente queries/experiments policies/p2 policies/p3
@@ -163,127 +147,14 @@ mordente queries/experiments policies/p2 policies/p5
 mordente queries/experiments policies/p2 policies/p6
 ```
 
+The expected time needed to run all the experiments is roughly 120 minutes.
+<!-- The output should be as follows (se e' troppo lungo mettiamolo in un file). -->
 
 
-## Manually Replicating the Experiments
+## Manual installation
 
-To compare a pair of real-world policies, use our auxiliary tool SEAExtract to extract the SEAndroid policies from the images above.
-Assuming you want to compare the policies numbered `#n` and `#m`, you can run:
+Alternatively, the docker image can be built locally with the provided dockerfile with the following.
+
 ```
-SEAExtract /usr/local/Mordente/{p#n}.zip /usr/local/Mordente/{p#n}_policy
-SEAExtract /usr/local/Mordente/{p#m}.zip /usr/local/Mordente/{p#m}_policy
+docker build --platform linux/{amd64 | arm64} -t mordente .
 ```
-
-Then, you can use Mordente with the predefined set of queries described in the paper appendix, which are stored in the file rw_queries.
-```
-mordente rw_queries /usr/local/Mordente/{p#n}_policy /usr/local/Mordente/{p#m}_policy
-```
-
-## Running the Experiment Script
-
-By running the script `experiments.py`, you can replicate the performance tests described in the paper.
-The script is executed as follows:
-```
-./experiments.py
-```
-
-The expected time needed to run all the experiments is roughly xxx minutes. The output should be as follows (se e' troppo lungo mettiamolo in un file).
-
----------
-
-
-
-
-
-# Cose vecchie o rimosse, qualcosa va rimesso (lasciato vuoto sopra, ad esempio i prerequisiti), ma non so cosa. Rimettete pure quello che non dovevo togliere
-
-By default, a predefined list of queries will be perfomed.
-Use the option `--queries` together with a path to specify a different set of queries (one per line).
-
-
-
-## Prerequisites
-Clone the main repository
-```
-git clone https://github.com/edoxthebest/Mordente.git
-```
-
-Clone the libraries on which Mordente relies
-```
-cd mordente
-%git clone https://github.com/edoxthebest/mata.git
-git clone --branch 1.20.0 --depth 1 https://github.com/VeriFIT/mata
-git clone --branch 4.5.1 --depth 1 https://github.com/SELinuxProject/setools.git 
-git clone --branch 3.8.1 --depth 1 git@github.com:SELinuxProject/selinux.git
-```
-
-The tool [`payload-dumper-go`](https://github.com/ssut/payload-dumper-go) is needed to extract the policies from a given android firmware.
-On a Linux or macOS system you can download this tool as follows.
-```
-cd src/selinuxtool/android-extract
-wget -q https://github.com/ssut/payload-dumper-go/releases/download/1.3.0/payload-dumper-go_1.3.0_linux_amd64.tar.gz
-tar -xvzf payload-dumper-go_1.3.0_linux_amd64.tar.gz
-chmod +x payload-dumper-go
-```
-Refer to the manual page for `payload-dumper-go` for more details.
-
-
-## About policy download
-Policies used during the experiments can be downloaded and extracted semi-automatically.
-You can either download them before building the docker image or download them inside a container running with said image.
-Beware that some interaction is required to download Xiaomi policies: when prompted you will be asked to enter an url; open the link provided with the prompt in your browser and copy the link that the button `Download Full Rom` is pointing to into the prompt.
-
-
-To download them before building the docker image proceed as follows.
-
-Make sure to be in the same folder where you downloaded `payload-dumper-go`, otherwise cd there, then execute the download script.
-You may also be required to enter your password since root privileges are needed to correctly mount the required partitions
-```
-cd src/selinuxtool/android-extract
-./demo-extract
-```
-
-## Build the Mordente container with Docker
-First, clone the required dependencies as above, then you can build the Docker image with the following.
-```
-docker build -t mordente .
-```
-
-Then create a container with the built image.
-```
-docker container create -it --name mordente mordente sh
-```
-
-Connect to the container with
-```
-docker container start mordente
-docker exec -it mordente sh
-```
-
-If you have yet to download the required policies you can do that now inside the container with the following                  
-```
-cd src/selinuxtool/android-extract
-./demo-extract
-```         
-
-## Replicate the testing suite using Docker
-Assuming we are already inside the container you can replicate the experiments of the paper with the following.
-```
-mordente policy policies/p1 policies/p2
-mordente policy policies/p2 policies/p3
-mordente policy policies/p1 policies/p4
-mordente policy policies/p2 policies/p5
-mordente policy policies/p2 policies/p6
-```
-
-
-
-## TODOs
-Installazione: assumendo di avere l'immagine gia pronta non dovrebbe essere complicato
-  basta creare un container e poi c'e da scaricare le politiche
-Mancano poi le policy da scaricare
-Si puo avere linux/amd64 and linux/arm64 -> da specificare credo
-da recuperare le politiche di esempio per lo smoke test
-migliorare come utilizzare il tool
-  da aggiornare il codice del main
-  da spiegare la sintassi delle queries

@@ -1,0 +1,24 @@
+2025-12-02 16:05:11,582 [INFO ]  Loading policy #1 (comet-ota-ad1a.240530.030-98066022).
+2025-12-02 16:05:11,586 [INFO ]  Android version v14.12021718 (2024-07-05).
+2025-12-02 16:12:25,639 [INFO ]  Reading file context 1327 / 1327.
+2025-12-02 16:12:26,493 [INFO ]  Read 1327 entries into 748 file contexts.
+2025-12-02 16:12:28,357 [WARNI]  Missing 31 contexts in type transitions.
+2025-12-02 16:12:36,966 [INFO ]  Simplified graph to only object nodes. [N 748] [E 287385]
+2025-12-02 16:12:36,967 [INFO ]  Loaded graph in 10.3669 [N 2599] [E 41296]     [N 748] [E 287385]
+2025-12-02 16:12:36,974 [INFO ]  Loaded policy #1 in 445.3920044898987.
+2025-12-02 16:12:37,082 [INFO ]  Loading policy #2 (comet-ota-ap3a.241005.015-5350adac).
+2025-12-02 16:12:37,087 [INFO ]  Android version v15.12366759 (2024-10-05).
+2025-12-02 16:20:04,115 [INFO ]  Reading file context 1351 / 1351.
+2025-12-02 16:20:04,789 [INFO ]  Read 1351 entries into 762 file contexts.
+2025-12-02 16:20:06,527 [WARNI]  Missing 33 contexts in type transitions.
+2025-12-02 16:20:15,588 [INFO ]  Simplified graph to only object nodes. [N 762] [E 298452]
+2025-12-02 16:20:15,590 [INFO ]  Loaded graph in 10.7202 [N 2649] [E 42744]     [N 762] [E 298452]
+2025-12-02 16:20:15,596 [INFO ]  Loaded policy #2 in 458.51459980010986.
+2025-12-02 16:20:16,000 [INFO ]  Loading policy #3 (comet-ota-bp2a.250605.031.a3-b6c67e0a).
+2025-12-02 16:20:16,003 [INFO ]  Android version v16.13578795 (2025-06-05).
+2025-12-02 16:29:14,829 [INFO ]  Reading file context 1397 / 1397.
+2025-12-02 16:29:16,036 [INFO ]  Read 1397 entries into 787 file contexts.
+2025-12-02 16:29:17,373 [WARNI]  Missing 39 contexts in type transitions.
+2025-12-02 16:29:29,343 [INFO ]  Simplified graph to only object nodes. [N 787] [E 314976]
+2025-12-02 16:29:29,345 [INFO ]  Loaded graph in 13.1958 [N 2791] [E 45104]     [N 787] [E 314976]
+2025-12-02 16:29:29,352 [INFO ]  Loaded policy #3 in 553.352395772934.
