@@ -1,24 +1,34 @@
-2025-12-02 16:05:11,582 [INFO ]  Loading policy #1 (comet-ota-ad1a.240530.030-98066022).
-2025-12-02 16:05:11,586 [INFO ]  Android version v14.12021718 (2024-07-05).
-2025-12-02 16:12:25,639 [INFO ]  Reading file context 1327 / 1327.
-2025-12-02 16:12:26,493 [INFO ]  Read 1327 entries into 748 file contexts.
-2025-12-02 16:12:28,357 [WARNI]  Missing 31 contexts in type transitions.
-2025-12-02 16:12:36,966 [INFO ]  Simplified graph to only object nodes. [N 748] [E 287385]
-2025-12-02 16:12:36,967 [INFO ]  Loaded graph in 10.3669 [N 2599] [E 41296]     [N 748] [E 287385]
-2025-12-02 16:12:36,974 [INFO ]  Loaded policy #1 in 445.3920044898987.
-2025-12-02 16:12:37,082 [INFO ]  Loading policy #2 (comet-ota-ap3a.241005.015-5350adac).
-2025-12-02 16:12:37,087 [INFO ]  Android version v15.12366759 (2024-10-05).
-2025-12-02 16:20:04,115 [INFO ]  Reading file context 1351 / 1351.
-2025-12-02 16:20:04,789 [INFO ]  Read 1351 entries into 762 file contexts.
-2025-12-02 16:20:06,527 [WARNI]  Missing 33 contexts in type transitions.
-2025-12-02 16:20:15,588 [INFO ]  Simplified graph to only object nodes. [N 762] [E 298452]
-2025-12-02 16:20:15,590 [INFO ]  Loaded graph in 10.7202 [N 2649] [E 42744]     [N 762] [E 298452]
-2025-12-02 16:20:15,596 [INFO ]  Loaded policy #2 in 458.51459980010986.
-2025-12-02 16:20:16,000 [INFO ]  Loading policy #3 (comet-ota-bp2a.250605.031.a3-b6c67e0a).
-2025-12-02 16:20:16,003 [INFO ]  Android version v16.13578795 (2025-06-05).
-2025-12-02 16:29:14,829 [INFO ]  Reading file context 1397 / 1397.
-2025-12-02 16:29:16,036 [INFO ]  Read 1397 entries into 787 file contexts.
-2025-12-02 16:29:17,373 [WARNI]  Missing 39 contexts in type transitions.
-2025-12-02 16:29:29,343 [INFO ]  Simplified graph to only object nodes. [N 787] [E 314976]
-2025-12-02 16:29:29,345 [INFO ]  Loaded graph in 13.1958 [N 2791] [E 45104]     [N 787] [E 314976]
-2025-12-02 16:29:29,352 [INFO ]  Loaded policy #3 in 553.352395772934.
+/usr/local/Mordente# mordente queries/experiments policies/p1 policies/p2 
+2026-02-14 10:42:22,269 [INFO ]  Starting comparison of the specified policies.
+2026-02-14 10:42:22,299 [INFO ]  Loading policy #1 (p1).
+2026-02-14 10:42:22,302 [INFO ]  Android version v14.12021718 (2024-07-05).
+2026-02-14 10:53:15,292 [INFO ]  Reading file context 1327 / 1327.
+2026-02-14 10:53:16,564 [INFO ]  Read 1327 entries into 748 file contexts.
+2026-02-14 10:53:18,793 [WARNI]  Missing 31 contexts in type transitions.
+2026-02-14 10:53:39,424 [INFO ]  Simplified graph to only object nodes. [N 748] [E 287385]
+2026-02-14 10:53:39,426 [INFO ]  Loaded graph in 22.7561 [N 2599] [E 41296]	[N 748] [E 287385]
+2026-02-14 10:53:39,439 [INFO ]  Loaded policy #1 in 677.1396520137787.
+2026-02-14 10:53:39,440 [INFO ]  Loading policy #2 (p2).
+2026-02-14 10:53:39,442 [INFO ]  Android version v15.12366759 (2024-10-05).
+2026-02-14 11:04:16,416 [INFO ]  Reading file context 1351 / 1351.
+2026-02-14 11:04:17,682 [INFO ]  Read 1351 entries into 762 file contexts.
+2026-02-14 11:04:20,263 [WARNI]  Missing 33 contexts in type transitions.
+2026-02-14 11:04:43,902 [INFO ]  Simplified graph to only object nodes. [N 762] [E 298452]
+2026-02-14 11:04:43,904 [INFO ]  Loaded graph in 26.1167 [N 2649] [E 42744]	[N 762] [E 298452]
+2026-02-14 11:04:43,917 [INFO ]  Loaded policy #2 in 664.4777376651764.
+2026-02-14 11:05:18,996 [INFO ]  Built InfoFlowGraph [N 769] [E 615737] in 34.82881307601929.
+2026-02-14 11:05:19,056 [INFO ]  Query perfomed `label_2 (CRITICAL) and not label_1 (CRITICAL)`
+2026-02-14 11:05:19,056 [INFO ]         FALSE, the following labels are counterexamples {('viewcompiler_exec', 'system_file')}
+2026-02-14 11:05:20,265 [INFO ]  Query perfomed `ito_2(label_2(CRITICAL)) and not ito_1(label_2(CRITICAL))`
+2026-02-14 11:05:20,265 [INFO ]         TRUE
+2026-02-14 11:05:21,333 [INFO ]  Query perfomed `(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL))) and not (label_2(UNTRUSTED) and ito_1(label_2(CRITICAL)))`
+2026-02-14 11:05:21,333 [INFO ]         TRUE
+2026-02-14 11:05:22,410 [INFO ]  Query perfomed `(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL))) and not (label_1(UNTRUSTED) and ito_1(label_1(CRITICAL)))`
+2026-02-14 11:05:22,410 [INFO ]         FALSE, the following labels are counterexamples {('block_device', 'userdata_exp_block_device'), ('system_data_file', 'system_userdir_file')}
+2026-02-14 11:05:23,668 [INFO ]  Query perfomed `(label_2(UNTRUSTED) and ito_2(label_2(CRITICAL)) and label_1(UNTRUSTED)) and not ito_1(label_1(CRITICAL))`
+2026-02-14 11:05:23,668 [INFO ]         TRUE
+2026-02-14 11:05:24,129 [INFO ]  Query perfomed `(label_2(CRITICAL) and ifrom_2(label_2(UNTRUSTED))) and not (label_2(CRITICAL) and ifrom_1(label_2(UNTRUSTED)))`
+2026-02-14 11:05:24,129 [INFO ]         FALSE, the following labels are counterexamples {('viewcompiler_exec', 'system_file')}
+2026-02-14 11:05:24,703 [INFO ]  Query perfomed `(ito_2(label_2(CRITICAL)) and label_1(UNTRUSTED)) and not label_2(TRUSTED)`
+2026-02-14 11:05:24,704 [INFO ]         FALSE, the following labels are counterexamples {('modem_userdata_file', 'modem_userdata_file'), ('hal_neuralnetworks_darwinn_exec', 'hal_neuralnetworks_darwinn_exec'), ('mnt_user_file', 'mnt_user_file'), ('user_profile_data_file', 'user_profile_data_file'), ('dm_user_device', 'dm_user_device'), ('media_userdir_file', 'media_userdir_file'), ('vendor_userdir_file', 'vendor_userdir_file'), ('tee_userdata_block_device', 'tee_userdata_block_device'), ('sensor_debug_data_file', 'sensor_debug_data_file'), ('system_userdir_file', 'system_userdir_file'), ('rild_debug_socket', 'rild_debug_socket'), ('gpuservice_exec', 'gpuservice_exec'), ('snapuserd_log_data_file', 'snapuserd_log_data_file'), ('user_profile_root_file', 'user_profile_root_file'), ('kmsg_debug_device', 'kmsg_debug_device'), ('system_ndebug_socket', 'system_ndebug_socket'), ('hal_threadnetwork_default_exec', 'hal_threadnetwork_default_exec'), ('snapuserd_socket', 'snapuserd_socket'), ('dump_display_userdebug_exec', 'dump_display_userdebug_exec'), ('userdata_sysdev', 'userdata_sysdev'), ('network_watchlist_data_file', 'network_watchlist_data_file'), ('modem_userdata_block_device', 'modem_userdata_block_device'), ('userspace_reboot_metadata_file', 'userspace_reboot_metadata_file'), ('snapuserd_proxy_socket', 'snapuserd_proxy_socket'), ('userdata_block_device', 'userdata_block_device'), ('hal_neuralnetworks_darwinn_data_file', 'hal_neuralnetworks_darwinn_data_file'), ('misc_user_data_file', 'misc_user_data_file'), ('snapuserd_exec', 'snapuserd_exec')}
+2026-02-14 11:05:24,704 [INFO ]  Perfomed 7 queries in 5.705982446670532.
